@@ -6,14 +6,14 @@ import cookieParser from "cookie-parser";
 import path from "path";
 
 // I M P O R T:  E N V  O P T I O N S
-import { PORT, corsOptions } from "./config/config.js";
+import { PORT, corsOptions } from "./config/config.ts";
 
 // I M P O R T:  C O M P O N E N T S
-import { connectToDatabase } from "./config/database.js";
+import { connectToDatabase } from "./config/database.ts";
 
 // I M P O R T:  M I D D L E W A R E  H A N D L E R
-import invalidRoute from "./routes/invalidRoute";
-import errorHandler from "./middleware/errorhandler";
+import invalidRoute from "./routes/invalidRoute.ts";
+import errorHandler from "./middleware/errorhandler.ts";
 
 // I M P O R T:  R O U T E S
 import usersRouter from "./routes/users.ts";
