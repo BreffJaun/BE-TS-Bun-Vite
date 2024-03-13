@@ -19,7 +19,7 @@ function App() {
     event.preventDefault();
     try {
       // Hier den Login-Request an das Backend senden
-      const response = await fetch('http://localhost:2404/users/login', {
+      const response = await fetch('/users/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -39,7 +39,7 @@ function App() {
     event.preventDefault();
     try {
       // Hier den Signup-Request an das Backend senden
-      const response = await fetch('http://localhost:2404/users/signup', {
+      const response = await fetch('/users/signup', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

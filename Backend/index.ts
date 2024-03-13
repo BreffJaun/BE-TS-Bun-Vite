@@ -3,6 +3,7 @@ import express from "express";
 import cors from "cors";
 import morgan from "morgan";
 import cookieParser from "cookie-parser";
+import path from "path";
 
 // I M P O R T:  E N V  O P T I O N S
 import { PORT, corsOptions } from "./config/config.js";
@@ -30,6 +31,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(cors(corsOptions));
+app.use(express.static(path.join(__dirname, "../client/build")));
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname + "/../client/build/index.html"));
+});
 
 // ROUTER MIDDLEWARE
 app.use("/users", usersRouter);
